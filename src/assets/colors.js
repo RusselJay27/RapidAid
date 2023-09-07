@@ -6,4 +6,5 @@ export default colors = {
     green: 'green',
     
     blueTheme: '#00c1ea',
+    greenTheme: '#00763a',
 };
