@@ -1,3 +1,14 @@
+npx react-native start --reset-cache
+
+cd android
+./gradlew assembleRelease
+
+RapidAid
+delete node modules & package-lock.json
+npm i
+cd android
+./gradlew clean
+
 logo/icon
 splash screen
 color them green or red
