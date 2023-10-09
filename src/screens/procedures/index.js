@@ -135,7 +135,7 @@ const Screen = (props) => {
                                 <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>3. Apply gauze pad.</Text>
                             </View>
 
-                            <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, }}>
+                            <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, marginBottom: 12 }}>
                                 <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Heat Exhaustion</Text>
                                 {/* <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
                                     <Image style={styles.logoStyle} source={images.heatexhaustion}  />
