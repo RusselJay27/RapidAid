@@ -18,6 +18,7 @@ import colors from '~/assets/colors';
 import {
     SplashScreen,
     HomeScreen,
+    ProceduresScreen,
     // TimeKeepingScreen,
 } from '~/screens';
 
@@ -32,6 +33,7 @@ const MainStackNavigator = () => {
                 }} >
                 <MainNavigator.Screen name="Splash" component={SplashScreen} />
                 <MainNavigator.Screen name="Home" component={HomeScreen} />
+                <MainNavigator.Screen name="Procedures" component={ProceduresScreen} />
                 {/* <MainNavigator.Screen name="TimeKeeping" component={TimeKeepingScreen} /> */}
             </MainNavigator.Navigator>
         </NavigationContainer>

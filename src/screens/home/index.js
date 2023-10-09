@@ -7,6 +7,13 @@ import images from '~/assets/images';
 const Screen = (props) => {
     const { navigation, route } = props;
 
+    const getStarted = () => 
+    {
+        navigation.navigate('Procedures', {
+            screen: 'Procedures',
+        })
+    }
+
     return (
         <SafeAreaView style={styles.safeAreaView}>
             <View style={styles.container}>
@@ -17,10 +24,11 @@ const Screen = (props) => {
                     <Text style={{color: colors.white, fontSize: 26, textAlign: 'center', fontWeight: 'bold'}}>Welcome to RapidAid</Text>
 
                     <View style={{marginTop: 20}}>
-                        <TouchableOpacity style={{backgroundColor: colors.white, margin: 8, elevation: 4, borderRadius: 24, paddingVertical: 12, width: Dimensions.get('window').width / 2, alignItems: 'center', justifyContent: 'center'}}>
+                        <TouchableOpacity onPress={getStarted}
+                        style={{backgroundColor: colors.white, margin: 8, elevation: 4, borderRadius: 24, paddingVertical: 12, width: Dimensions.get('window').width / 2, alignItems: 'center', justifyContent: 'center'}}>
                             <Text style={{fontSize: 20, color: colors.greenTheme, fontWeight: 'bold'}}>Get Started</Text>
                         </TouchableOpacity>
-                        {/* <TouchableOpacity style={{backgroundColor: colors.white, margin: 8, elevation: 4, borderRadius: 24, paddingVertical: 8, paddingHorizontal: 32}}>
+                        {/* <TouchableOpacity style={{backgroundColor: colors.white, margin: 8, elevation: 4, borderRadius: 24, paddingVertical: 8, paddingHorizontal: 32, alignItems: 'center', justifyContent: 'center'}}>
                             <Text style={{fontSize: 20, color: colors.greenTheme, fontWeight: 'bold'}}>Quiz</Text>
                         </TouchableOpacity> */}
                     </View>
