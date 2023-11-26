@@ -7,6 +7,8 @@ import colors from '~/assets/colors';
 import images from '~/assets/images';
 import videos from '~/assets/videos';
 
+import IconII from 'react-native-vector-icons/Ionicons';
+
 const Screen = (props) => {
     const { navigation, route } = props;
 
@@ -16,12 +18,17 @@ const Screen = (props) => {
                 <ScrollView showsVerticalScrollIndicator={false} style={{}}>
                     <View style={{ padding : 12, }}>
                         <View style={{alignItems: 'center', }}>
-                            <Text style={{fontSize: 32, color: colors.white, fontWeight: 'bold', marginTop: 12}}>Basic Life Support</Text>
+                            <View style={{ width: '100%'}}>
+                                <TouchableOpacity onPress={() => {navigation.goBack();}}>
+                                    <IconII name="arrow-back-circle-outline" size={40} color="#fff" />
+                                </TouchableOpacity>
+                            </View>
+                            <Text style={{fontSize: 32, color: colors.white, fontWeight: 'bold', }}>Basic Life Support</Text>
                             <View style={{marginVertical: 12}}>
                                 <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
                                     <Image style={styles.logoStyle} source={images.infant}  />
                                 </View>
-                                <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>Be sure the infant is face-up on a hard surface. 
+                                <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold' }}>Be sure the infant is face-up on a hard surface. 
                                 Using two fingers, perform compressions in the center of the infant's chest; do not press on the end of the sternum as 
                                 this can cause injury to the infant. Compression depth should be about 1.5 inches (4 cm) and a rate of 100 to 120 per minute.</Text>
                             </View>
@@ -42,21 +49,15 @@ const Screen = (props) => {
 
                             <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, }}>
                                 <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Injured Arm</Text>
-                                {/* <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
-                                    <Image style={styles.logoStyle} source={images.injuredarm}  />
-                                </View> */}
+                                <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}Arm pain may be related to problems with the muscles, bones, tendons, 
+                                ligaments and nerves. It also may be related to problems with the joints of the shoulders, elbows and wrists. Often arm pain is caused by a problem in 
+                                your neck or upper spine.</Text>
 
                                 <View style={{margin: 8}}>
                                     <VideoPlayer
-                                        // video={{ uri: 'https://placer8developer.com/rapidaid_videos/HEAT_EXHAUSTION.mp4' }}
-                                        // video={{ uri: 'https://gdurl.com/8aLw' }}
-                                        // video={{ uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' }}
-                                        // video={require('~/assets/videos/injuredarm.mp4')}
                                         video={videos.injuredarm}
                                         autoplay={false}
                                         defaultMuted={false}
-                                        // videoWidth={1600}
-                                        // videoHeight={900}
                                         thumbnail={images.injuredarm}
                                         showDuration
 
@@ -69,9 +70,8 @@ const Screen = (props) => {
 
                             <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, }}>
                                 <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Burn</Text>
-                                {/* <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
-                                    <Image style={styles.logoStyle} source={images.burn}  />
-                                </View> */}
+                                <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}A burn is tissue damage caused by heat, chemicals, electricity, sunlight, 
+                                or nuclear radiation. The most common burns are those caused by hot liquid or steam, building fires, and flammable liquids and gases.</Text>
 
                                 <View style={{margin: 8}}>
                                     <VideoPlayer
@@ -93,9 +93,8 @@ const Screen = (props) => {
 
                             <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, }}>
                                 <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Sprain</Text>
-                                {/* <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
-                                    <Image style={styles.logoStyle} source={images.sprain}  />
-                                </View> */}
+                                <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}A sprain is an injury to the ligaments around a joint. Ligaments are strong, 
+                                flexible fibers that hold bones together. When a ligament is stretched too far or tears, the joint will become painful and swell. </Text>
 
                                 <View style={{margin: 8}}>
                                     <VideoPlayer
@@ -115,9 +114,8 @@ const Screen = (props) => {
 
                             <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, }}>
                                 <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Wounds</Text>
-                                {/* <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
-                                    <Image style={styles.logoStyle} source={images.wounds}  />
-                                </View> */}
+                                <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}An injury to the body (as from violence, accident, or surgery) that typically 
+                                involves laceration or breaking of a membrane (such as the skin) and usually damage to underlying tissues.</Text>
 
                                 <View style={{margin: 8}}>
                                     <VideoPlayer
@@ -135,11 +133,11 @@ const Screen = (props) => {
                                 <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>3. Apply gauze pad.</Text>
                             </View>
 
-                            <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, marginBottom: 12 }}>
+                            <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12,  }}>
                                 <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Heat Exhaustion</Text>
-                                {/* <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
-                                    <Image style={styles.logoStyle} source={images.heatexhaustion}  />
-                                </View> */}
+                                <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}Heat exhaustion is the body's response to an excessive loss of water and 
+                                salt, usually through excessive sweating. Heat exhaustion is most likely to affect: The elderly. People with high blood pressure. Those working in a hot 
+                                environment.</Text>
 
                                 <View style={{margin: 8}}>
                                     <VideoPlayer
@@ -154,6 +152,64 @@ const Screen = (props) => {
                                 <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>1. Ask the patient first.</Text>
                                 <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>2. Applying cold compress to head and face.</Text>
                                 <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>3. Wait until the patient is already stable.</Text>
+                            </View>
+
+                            <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12,  }}>
+                                <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Allergic Reaction</Text>
+                                <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}are sensitivities to substances called allergens that come into contact with the skin, 
+                                nose, eyes, respiratory tract, and gastrointestinal tract. </Text>
+
+                                <View style={{margin: 4}}>
+                                    <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
+                                        <Image style={styles.imageStyle} source={images.allergic_reaction}  />
+                                    </View>
+                                </View>
+                                
+                                <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>1. Administer an epinephrine auto-injector (if available) for severe allergic reactions.</Text>
+                                <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>2. Call for emergency help and assist with any prescribed medications.</Text>
+                            </View>
+
+                            <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12,  }}>
+                                <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Fractures</Text>
+                                <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}a partial or complete break in the bone. </Text>
+
+                                <View style={{margin: 4}}>
+                                    <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
+                                        <Image style={styles.imageStyle} source={images.fracture}  />
+                                    </View>
+                                </View>
+                                
+                                <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>1. Call for professional medical help.</Text>
+                                <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>2. Immobilize the injured area with a splint or bandage.</Text>
+                            </View>
+
+                            <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12,  }}>
+                                <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Stroke</Text>
+                                <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}It occurs when something blocks blood supply to part of the brain or when a blood vessel in 
+                                the brain bursts. </Text>
+
+                                <View style={{margin: 4}}>
+                                    <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
+                                        <Image style={styles.imageStyle} source={images.stroke}  />
+                                    </View>
+                                </View>
+                                
+                                <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>1. Remember the FAST acronym: Face drooping, Arm weakness, Speech difficulty, Time to call 
+                                emergency services.</Text>
+                            </View>
+
+                            <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12,  }}>
+                                <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Eye Injuries</Text>
+                                <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}include bruises, punctures and scratches.</Text>
+
+                                <View style={{margin: 4}}>
+                                    <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
+                                        <Image style={styles.imageStyle} source={images.eye_injury}  />
+                                    </View>
+                                </View>
+                                
+                                <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>1. Rinse the eye with cool, clean water for at least 15 minutes.</Text>
+                                <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>2. Do not rub the eye, and seek medical attention.</Text>
                             </View>
 
                         </View>
@@ -190,6 +246,13 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         height: Dimensions.get('window').width / 3,
         width: Dimensions.get('window').width / 2.4,
+        // borderRadius: 8,
+    },
+    imageStyle:
+    {
+        resizeMode: 'contain',
+        height: Dimensions.get('window').width / 2,
+        width: Dimensions.get('window').width / 1.2,
         // borderRadius: 8,
     },
 });

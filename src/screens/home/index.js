@@ -9,8 +9,8 @@ const Screen = (props) => {
 
     const getStarted = () => 
     {
-        navigation.navigate('Procedures', {
-            screen: 'Procedures',
+        navigation.navigate('Category', {
+            screen: 'Category',
         })
     }
 
@@ -25,11 +25,16 @@ const Screen = (props) => {
 
                     <View style={{marginTop: 20}}>
                         <TouchableOpacity onPress={getStarted}
-                        style={{backgroundColor: colors.white, margin: 8, elevation: 4, borderRadius: 24, paddingVertical: 12, width: Dimensions.get('window').width / 2, alignItems: 'center', justifyContent: 'center'}}>
+                        style={{backgroundColor: colors.white, margin: 8, elevation: 4, borderRadius: 24, paddingVertical: 8, paddingHorizontal: 32, alignItems: 'center', justifyContent: 'center'}}>
                             <Text style={{fontSize: 20, color: colors.greenTheme, fontWeight: 'bold'}}>Get Started</Text>
                         </TouchableOpacity>
-                        {/* <TouchableOpacity style={{backgroundColor: colors.white, margin: 8, elevation: 4, borderRadius: 24, paddingVertical: 8, paddingHorizontal: 32, alignItems: 'center', justifyContent: 'center'}}>
+                        {/* <TouchableOpacity 
+                        style={{backgroundColor: colors.white, margin: 8, elevation: 4, borderRadius: 24, paddingVertical: 8, paddingHorizontal: 32, alignItems: 'center', justifyContent: 'center'}}>
                             <Text style={{fontSize: 20, color: colors.greenTheme, fontWeight: 'bold'}}>Quiz</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity 
+                        style={{backgroundColor: colors.white, margin: 8, elevation: 4, borderRadius: 24, paddingVertical: 8, paddingHorizontal: 32, alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={{fontSize: 20, color: colors.greenTheme, fontWeight: 'bold'}}>Emergency Hotline</Text>
                         </TouchableOpacity> */}
                     </View>
                 </View>

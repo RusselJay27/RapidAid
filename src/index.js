@@ -19,7 +19,10 @@ import {
     SplashScreen,
     HomeScreen,
     ProceduresScreen,
-    // TimeKeepingScreen,
+    HotlineScreen,
+    DisasterScreen,
+    CategoryScreen,
+    QuizScreen,
 } from '~/screens';
 
 const MainStackNavigator = () => {
@@ -34,7 +37,10 @@ const MainStackNavigator = () => {
                 <MainNavigator.Screen name="Splash" component={SplashScreen} />
                 <MainNavigator.Screen name="Home" component={HomeScreen} />
                 <MainNavigator.Screen name="Procedures" component={ProceduresScreen} />
-                {/* <MainNavigator.Screen name="TimeKeeping" component={TimeKeepingScreen} /> */}
+                <MainNavigator.Screen name="Hotline" component={HotlineScreen} />
+                <MainNavigator.Screen name="Disaster" component={DisasterScreen} />
+                <MainNavigator.Screen name="Category" component={CategoryScreen} />
+                <MainNavigator.Screen name="Quiz" component={QuizScreen} />
             </MainNavigator.Navigator>
         </NavigationContainer>
     );
