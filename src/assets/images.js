@@ -25,4 +25,6 @@ export default images = {
     fracture: require('~/assets/images/fracture.jpg'),
     stroke: require('~/assets/images/stroke.jpg'),
     eye_injury: require('~/assets/images/eye_injury.jpg'),
+    
+    firstaidtraining: require('~/assets/images/firstaidtraining.png'),
 };

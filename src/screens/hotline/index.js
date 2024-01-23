@@ -26,6 +26,15 @@ const Screen = (props) => {
                             <Text style={{fontSize: 32, color: colors.white, fontWeight: 'bold', }}>Emergency Hotline</Text>
 
                             <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, }}>
+                                <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', marginBottom: 8 }}>Muntinlupa</Text>
+
+                                <Text style={{fontSize: 16, color: colors.white, }}><Text style={{fontWeight: 'bold'}}>137-175</Text></Text>
+                                <Text style={{fontSize: 16, color: colors.white, }}>Landline: <Text style={{fontWeight: 'bold'}}>8373-51-65</Text></Text>
+                                <Text style={{fontSize: 16, color: colors.white, }}>Rescue Hotline Smart: <Text style={{fontWeight: 'bold'}}>0921-542-7123</Text></Text>
+                                <Text style={{fontSize: 16, color: colors.white, }}>Rescue Hotline Globe: <Text style={{fontWeight: 'bold'}}>0927-257-9322</Text></Text>
+                            </View>
+
+                            <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, }}>
                                 <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', marginBottom: 8 }}>National Disaster Risk Reduction Management Council ( NDRRMC )</Text>
 
                                 <Text style={{fontSize: 16, color: colors.white, }}>Trunklines: <Text style={{fontWeight: 'bold'}}>911-5061 to 65</Text></Text>

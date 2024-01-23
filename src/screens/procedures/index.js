@@ -10,7 +10,11 @@ import videos from '~/assets/videos';
 import IconII from 'react-native-vector-icons/Ionicons';
 
 const Screen = (props) => {
-    const { navigation, route } = props;
+    const { navigation, route } = props;  
+    
+    // useEffect(() => {
+    //     console.log(route.params.title);
+    // }, []);  
 
     return (
         <SafeAreaView style={styles.safeAreaView}>
@@ -23,6 +27,8 @@ const Screen = (props) => {
                                     <IconII name="arrow-back-circle-outline" size={40} color="#fff" />
                                 </TouchableOpacity>
                             </View>
+                            { route.params.title == "Basic Life Support" ? 
+                            <>
                             <Text style={{fontSize: 32, color: colors.white, fontWeight: 'bold', }}>Basic Life Support</Text>
                             <View style={{marginVertical: 12}}>
                                 <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
@@ -46,7 +52,15 @@ const Screen = (props) => {
                                 In many situations, more than one person is available to do CPR. This choreographed method includes performing chest compressions, 
                                 managing the airway, delivering rescue breaths, and using the AED, all as a team.</Text>
                             </View>
-
+                            </> 
+                            : 
+                            <></>
+                            }
+                            { route.params.title == "First Aid Training" ? 
+                            <>
+                            <View>
+                                <Text style={{fontSize: 32, color: colors.white, fontWeight: 'bold', }}>First Aid Training</Text>
+                            </View>
                             <View style={{marginVertical: 12, width: Dimensions.get('window').width, paddingHorizontal : 12, }}>
                                 <Text style={{fontSize: 24, color: colors.white, fontWeight: 'bold', }}>Injured Arm</Text>
                                 <Text style={{fontSize: 16, color: colors.white, textAlign: 'justify', }}>{'\t'}Arm pain may be related to problems with the muscles, bones, tendons, 
@@ -211,6 +225,11 @@ const Screen = (props) => {
                                 <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>1. Rinse the eye with cool, clean water for at least 15 minutes.</Text>
                                 <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', }}>2. Do not rub the eye, and seek medical attention.</Text>
                             </View>
+                            </> 
+                            : 
+                            <></>
+                            }
+
 
                         </View>
 

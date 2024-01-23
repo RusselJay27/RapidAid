@@ -36,37 +36,47 @@ const Screen = (props) => {
 
                         <View style={{ width: '100%', flex: 1, justifyContent: 'space-evenly', }}>
 
-                            <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-around'}}>
+                            <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-around', alignItems: 'flex-start'}}>
                                 <View style={{ justifyContent: 'center', alignItems: 'center'}}>
-                                    <TouchableOpacity onPress={() => { navigation.navigate('Procedures', { screen: 'Procedures', }); }}
-                                        style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, }}>
-                                        <Image style={styles.logoStyle} source={images.bls} resizeMode='stretch' />
+                                    <TouchableOpacity onPress={() => { navigation.navigate('Procedures', { screen: 'Procedures', title: 'Basic Life Support' }); }}
+                                        style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, elevation: 4 }}>
+                                        <Image style={styles.imageStyle} source={images.bls} resizeMode='stretch' />
                                     </TouchableOpacity>
                                     <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center', }}>BASIC LIFE{'\n'}SUPPORT</Text>
                                 </View>
                                 <View style={{ justifyContent: 'center', alignItems: 'center'}}>
-                                    <TouchableOpacity onPress={() => { navigation.navigate('Disaster', { screen: 'Disaster', }); }}
-                                        style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, }}>
-                                        <Image style={styles.logoStyle} source={images.disaster_risk_reduction} resizeMode='stretch' />
+                                    <TouchableOpacity onPress={() => { navigation.navigate('Procedures', { screen: 'Procedures', title: 'First Aid Training' }); }}
+                                        style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, elevation: 4 }}>
+                                        <Image style={styles.imageStyle} source={images.firstaidtraining} resizeMode='stretch' />
                                     </TouchableOpacity>
-                                    <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center'}}>DISASTER RISK{'\n'}REDUCTION</Text>
+                                    <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center'}}>FIRST AID{'\n'}TRAINING</Text>
                                 </View>
                             </View>
 
-                            <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-around'}}>
+                            <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-around', alignItems: 'flex-start'}}>
                                 <View style={{ justifyContent: 'center', alignItems: 'center'}}>
-                                    <TouchableOpacity onPress={() => { navigation.navigate('Hotline', { screen: 'Hotline', }); }}
-                                        style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, }}>
-                                        <Image style={styles.logoStyle} source={images.hotline} resizeMode='stretch' />
+                                    <TouchableOpacity onPress={() => { navigation.navigate('Disaster', { screen: 'Disaster', }); }}
+                                        style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, elevation: 4 }}>
+                                        <Image style={styles.imageStyle} source={images.disaster_risk_reduction} resizeMode='stretch' />
                                     </TouchableOpacity>
-                                    <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center'}}>EMERGCENY{'\n'}HOTLINE</Text>
+                                    <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center'}}>DISASTER RISK{'\n'}REDUCTION</Text>
                                 </View>
                                 <View style={{ justifyContent: 'center', alignItems: 'center'}}>
                                     <TouchableOpacity onPress={() => { navigation.navigate('Quiz', { screen: 'Quiz', }); }}
-                                        style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, }}>
-                                        <Image style={styles.logoStyle} source={images.quiz} resizeMode='stretch' />
+                                        style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, elevation: 4 }}>
+                                        <Image style={styles.imageStyle} source={images.quiz} resizeMode='stretch' />
                                     </TouchableOpacity>
                                     <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold'}}>QUIZ</Text>
+                                </View>
+                            </View>
+
+                            <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-around', alignItems: 'flex-start'}}>
+                                <View style={{ justifyContent: 'center', alignItems: 'center'}}>
+                                    <TouchableOpacity onPress={() => { navigation.navigate('Hotline', { screen: 'Hotline', }); }}
+                                        style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, elevation: 4 }}>
+                                        <Image style={styles.imageStyle} source={images.hotline} resizeMode='stretch' />
+                                    </TouchableOpacity>
+                                    <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center'}}>EMERGCENY{'\n'}HOTLINE</Text>
                                 </View>
                             </View>
 
@@ -111,8 +121,8 @@ const styles = StyleSheet.create({
     imageStyle:
     {
         resizeMode: 'contain',
-        height: Dimensions.get('window').width / 2,
-        width: Dimensions.get('window').width / 2,
+        height: Dimensions.get('window').width / 3.2,
+        width: Dimensions.get('window').width / 3.2,
         borderRadius: 8,
     },
 });

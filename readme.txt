@@ -9,6 +9,64 @@ npm i
 cd android
 ./gradlew clean
 
+
+1. seperate basic life support & first aid training (/)
+2. add questions in quiz and add result, if 15 yung score, passed else failed (/)
+
+Which agency is responsible for coordinating disaster response and management in the Philippines?
+   - A. PAGASA
+   - B. MMDA
+   - C. NDRRMC
+   Correct Answer: C
+
+During typhoons, what government agency provides weather forecasts and warnings?
+   - A. MMDA
+   - B. PAGASA
+   - C. BFP
+   Correct Answer: B
+
+In case of a flood, what emergency number should be contacted for immediate assistance?
+   - A. 117
+   - B. 911
+   - C. 136
+   Correct Answer: C
+
+Which organization plays a crucial role in providing relief and assistance during disasters?
+   - A. DOH
+   - B. MMDA
+   - C. Red Cross
+   Correct Answer: C
+
+What does "NDRRMC" stand for?
+   - A. National Defense and Rescue Response Management Council
+   - B. National Disaster Risk Reduction and Management Council
+   - C. National Emergency and Disaster Relief Council
+   Correct Answer: B
+
+During an earthquake, what is the recommended safety action to take cover under?
+   - A. Windows
+   - B. Door frames
+   - C. Tables or desks
+   Correct Answer: C
+
+In case of a volcanic eruption, which agency provides updates and advisories?
+   - A. PDEA
+   - B. NDRRMC
+   - C. PHIVOLCS
+   Correct Answer: C
+
+Which of the following is the correct hotline number of Bureau of Fire Protection?
+A. (02)-426-0219
+B. (02)- 922-9061
+C. (02)-882-4150-77
+Correct Answer: A
+
+Which of the following is the correct hotline number of Metro Manila Development Authority?
+A. 16211
+B. 136
+C. (02)-922-9061
+Correct Answer: B
+
 wounds
 https://drive.google.com/file/d/18uyMsGYFyRY7u22dUaaeuHmk4xRZCUXT/view?usp=sharing
 

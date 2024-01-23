@@ -8,6 +8,8 @@ import images from '~/assets/images';
 import videos from '~/assets/videos';
 
 import IconII from 'react-native-vector-icons/Ionicons';
+import IconFA6 from 'react-native-vector-icons/FontAwesome6';
+import IconFA5 from 'react-native-vector-icons/FontAwesome5';
 
 const data = [
     {
@@ -60,29 +62,77 @@ const data = [
         "answer": "heat exhaustion",
         "choices": ["heat exhaustion","stroke","burn"],
     },
+    {
+        "question": "Which agency is responsible for coordinating disaster response and management in the Philippines?",
+        "answer": "NDRRMC",
+        "choices": ["PAGASA","MMDA","NDRRMC"],
+    },
+    {
+        "question": "During typhoons, what government agency provides weather forecasts and warnings?",
+        "answer": "PAGASA",
+        "choices": ["MMDA","PAGASA","BFP"],
+    },
+    {
+        "question": "In case of a flood, what emergency number should be contacted for immediate assistance?",
+        "answer": "136",
+        "choices": ["117","911","136"],
+    },
+    {
+        "question": "Which organization plays a crucial role in providing relief and assistance during disasters?",
+        "answer": "Red Cross",
+        "choices": ["DOH","MMDA","Red Cross"],
+    },
+    {
+        "question": "What does \"NDRRMC\" stand for?",
+        "answer": "National Disaster Risk Reduction and Management Council",
+        "choices": ["National Defense and Rescue Response Management Council","National Disaster Risk Reduction and Management Council","National Emergency and Disaster Relief Council"],
+    },
+    {
+        "question": "During an earthquake, what is the recommended safety action to take cover under?",
+        "answer": "Tables or desks",
+        "choices": ["Windows","Door frames","Tables or desks"],
+    },
+    {
+        "question": "In case of a volcanic eruption, which agency provides updates and advisories?",
+        "answer": "PHIVOLCS",
+        "choices": ["PDEA","NDRRMC","PHIVOLCS"],
+    },
+    {
+        "question": "Which of the following is the correct hotline number of Bureau of Fire Protection?",
+        "answer": "(02)-426-0219",
+        "choices": ["(02)-426-0219","(02)- 922-9061","(02)-882-4150-77"],
+    },
+    {
+        "question": "Which of the following is the correct hotline number of Metro Manila Development Authority?",
+        "answer": "136",
+        "choices": ["16211","136","(02)-922-9061"],
+    },
 ]
 
 const Screen = (props) => {
     const { navigation, route } = props;
 
     const [modalVisible, setModalVisible] = useState(false);
+    const [result, setResult] = useState(false);
+
     const [select, setSelect] = useState('');
     
     const [number, setNumber] = useState(0);
+    const [score, setScore] = useState(0);
     
     const [answer, setAnswer] = useState('');
     const [question, setQuestion] = useState('');
     const [choices, setChoices] = useState([]);
     
     useEffect(() => {
-        loadQuestion();
+        loadQuestion(0);
     }, []);
 
-    const loadQuestion = () =>
+    const loadQuestion = (num) =>
     {
-        const min = 0; 
-        const max = 9; 
-        const randomNumber =  Math.floor(Math.random() * (max - min + 1)) + min; 
+        // const min = 0; 
+        // const max = 9; 
+        const randomNumber = num;// Math.floor(Math.random() * (max - min + 1)) + min; 
         // console.log(randomNumber);
         setQuestion(data[randomNumber].question);
         setAnswer(data[randomNumber].answer);
@@ -91,21 +141,69 @@ const Screen = (props) => {
 
     const btnNext = () =>
     {
-        setNumber(number + 1);
-        if (number == 9)
+        if (answer == select)
+        {
+            setScore(score + 1);
+        }
+
+        let num = number + 1;
+        setNumber(num);
+        if (number == 18)
         {
             setModalVisible(false);
-            navigation.goBack();
+            setResult(true);
+            // navigation.goBack();
         }
         else
         {
             setModalVisible(false);
-            loadQuestion(); 
+            loadQuestion(num); 
         }
     }
 
     return (
         <SafeAreaView style={styles.safeAreaView}>
+            
+            <Modal
+                animationType="fade"
+                transparent={true}
+                visible={result}
+                onRequestClose={() => {
+                    // setModalVisible(!modalVisible);
+                }}>
+                <View style={{height: Dimensions.get('window').height, width: Dimensions.get('window').width, backgroundColor: 'rgba(0,0,0,0.7)', justifyContent: 'center', alignItems: 'center'}}>
+                    
+                    <View style={{backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', borderRadius: 20, 
+                        width: Dimensions.get('window').width / 1.2, padding: 20}}>
+                        {score > 14
+                        ?
+                        <>
+                            <IconFA6 name="medal" size={Dimensions.get('window').width / 3} color="green" />
+                            <Text style={{fontSize: 24, color: 'black', fontWeight: 'bold', textAlign: 'center', paddingHorizontal: 8}}>Congratulations!!!{'\n'}You passed!</Text>
+                            <TouchableOpacity onPress={() => { setResult(false); navigation.goBack(); }}
+                            style={{backgroundColor: colors.greenTheme, padding: 12, borderRadius: 50, marginVertical: 8, width: '80%', alignItems: 'center', justifyContent: 'center'}}>
+                                <Text style={{fontSize: 20, color: 'white', fontWeight: 'bold'}}>Back</Text>
+                            </TouchableOpacity>
+                        </>
+                        :
+                        <>
+                            <IconFA5 name="times-circle" size={Dimensions.get('window').width / 3} color="red" />
+                            <Text style={{fontSize: 24, color: 'black', fontWeight: 'bold', textAlign: 'center', paddingHorizontal: 8}}>You failed, please try again!</Text>
+                            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+                                <TouchableOpacity onPress={() => { setResult(false); navigation.goBack(); }}
+                                style={{backgroundColor: colors.greenTheme, padding: 12, borderRadius: 50, marginVertical: 8, width: '45%', alignItems: 'center', justifyContent: 'center'}}>
+                                    <Text style={{fontSize: 20, color: 'white', fontWeight: 'bold'}}>Back</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => { setResult(false); setNumber(0); setScore(0); loadQuestion(0); }}
+                                style={{backgroundColor: colors.greenTheme, padding: 12, borderRadius: 50, marginVertical: 8, width: '45%', alignItems: 'center', justifyContent: 'center'}}>
+                                    <Text style={{fontSize: 20, color: 'white', fontWeight: 'bold'}}>Repeat</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </>
+                        }
+                    </View>
+                </View>
+            </Modal>
             
             <Modal
                 animationType="fade"
