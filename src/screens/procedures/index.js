@@ -289,7 +289,7 @@ const Screen = (props) => {
         
                                             <View style={{margin: 4}}>
                                                 <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
-                                                    <Image style={styles.imageStyle} source={images.fever}  />
+                                                    <Image style={styles.imageStyle} source={images.choking}  />
                                                 </View>
                                             </View>
                                             
@@ -488,7 +488,7 @@ const Screen = (props) => {
         
                                             <View style={{margin: 4}}>
                                                 <View style={{ margin: 8, alignItems: 'center', marginVertical: 8 }}>
-                                                    <Image style={styles.imageStyle} source={images.fever}  />
+                                                    <Image style={styles.imageStyle} source={images.headinjury}  />
                                                 </View>
                                             </View>
                                             
