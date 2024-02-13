@@ -24,7 +24,7 @@ const data = [
     },
     {
         "question": "Which of the following is not belong to the wound\'s treatment equipment?",
-        "answer": "Bulak",
+        "answer": "Knife",
         "choices": ["Bulak","Betadine","Gauze pads","Knife"],
     },
     {

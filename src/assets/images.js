@@ -27,4 +27,19 @@ export default images = {
     eye_injury: require('~/assets/images/eye_injury.jpg'),
     
     firstaidtraining: require('~/assets/images/firstaidtraining.png'),
+    
+    asthma: require('~/assets/images/asthma.jpg'),
+    blister: require('~/assets/images/blister.jpg'),
+    choking: require('~/assets/images/choking.jpg'),
+    drowning: require('~/assets/images/drowning.jpg'),
+    fever: require('~/assets/images/fever.jpg'),
+    headinjury: require('~/assets/images/headinjury.jpg'),
+    infection: require('~/assets/images/infection.jpg'),
+    overdose: require('~/assets/images/overdose.jpg'),
+    poisoning: require('~/assets/images/poisoning.jpg'),
+    seizure: require('~/assets/images/seizure.jpg'),
+    spinalinjury: require('~/assets/images/spinalinjury.jpg'),
+    strain: require('~/assets/images/strain.jpg'),
+    sorethroat: require('~/assets/images/sorethroat.jpg'),
+    headache: require('~/assets/images/headache.jpg'),
 };
