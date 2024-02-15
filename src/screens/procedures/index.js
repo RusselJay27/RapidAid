@@ -599,8 +599,8 @@ const Screen = (props) => {
                             <View>
                                 <Text style={{fontSize: 32, color: colors.white, fontWeight: 'bold', }}>First Aid Training</Text>
                             </View>
-                            <View style={{height: Dimensions.get('window').height / 1.4, alignItems: 'center', justifyContent: 'space-evenly',  }}>
-                                <TouchableOpacity onPress={() => { setModalVisible(!modalVisible); setTopic('MEDICAL CONDITIONS'); } }
+                            <View style={{height: Dimensions.get('window').height / 1.4,  justifyContent: 'space-evenly', width: '100%' }}>
+                                {/* <TouchableOpacity onPress={() => { setModalVisible(!modalVisible); setTopic('MEDICAL CONDITIONS'); } }
                                     style={{ backgroundColor: colors.white, padding: 12, paddingHorizontal: 20, alignItems: 'center', justifyContent: 'center', elevation: 4, borderRadius: 50, marginVertical: 12}}>
                                     <Text style={{fontSize: 20, color: colors.greenTheme, fontWeight: 'bold',}}>MEDICAL CONDITIONS</Text>
                                 </TouchableOpacity>
@@ -615,7 +615,43 @@ const Screen = (props) => {
                                 <TouchableOpacity onPress={() => { setModalVisible(!modalVisible); setTopic('ENVIRONMENTAL ACCIDENT'); } }
                                     style={{ backgroundColor: colors.white, padding: 12, paddingHorizontal: 20, alignItems: 'center', justifyContent: 'center', elevation: 4, borderRadius: 50, marginVertical: 12}}>
                                     <Text style={{fontSize: 20, color: colors.greenTheme, fontWeight: 'bold',}}>ENVIRONMENTAL ACCIDENT</Text>
-                                </TouchableOpacity>
+                                </TouchableOpacity> */}
+                                
+
+                                <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-around', alignItems: 'flex-start', }}>
+                                    <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                        <TouchableOpacity onPress={() => { setModalVisible(!modalVisible); setTopic('MEDICAL CONDITIONS'); } }
+                                            style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, elevation: 4 }}>
+                                            <Image style={styles.imageStyles} source={images.medical_condition} resizeMode='stretch' />
+                                        </TouchableOpacity>
+                                        <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center'}}>MEDICAL{'\n'}CONDITIONS</Text>
+                                    </View>
+                                    <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                        <TouchableOpacity onPress={() => { setModalVisible(!modalVisible); setTopic('BREATHING PROBLEMS'); } }
+                                            style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, elevation: 4 }}>
+                                            <Image style={styles.imageStyles} source={images.breathing_problem} resizeMode='stretch' />
+                                        </TouchableOpacity>
+                                        <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center'}}>BREATHING{'\n'}PROBLEMS</Text>
+                                    </View>
+                                </View>
+
+                                <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-around', alignItems: 'flex-start', }}>
+                                    <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                        <TouchableOpacity onPress={() => { setModalVisible(!modalVisible); setTopic('INJURIES AND TRAUMA'); } }
+                                            style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, elevation: 4 }}>
+                                            <Image style={styles.imageStyles} source={images.injuries_trauma} resizeMode='stretch' />
+                                        </TouchableOpacity>
+                                        <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center'}}>INJURIES{'\n'}AND TRAUMA</Text>
+                                    </View>
+                                    <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                        <TouchableOpacity onPress={() => { setModalVisible(!modalVisible); setTopic('ENVIRONMENTAL ACCIDENT'); } }
+                                            style={{ margin: 8, alignItems: 'center', marginVertical: 8, borderRadius: 8, elevation: 4 }}>
+                                            <Image style={styles.imageStyles} source={images.environmental_accident} resizeMode='stretch' />
+                                        </TouchableOpacity>
+                                        <Text style={{fontSize: 16, color: colors.white, fontWeight: 'bold', textAlign: 'center'}}>ENVIRONMENTAL{'\n'}ACCIDENT</Text>
+                                    </View>
+                                </View>
+
                             </View>
                             </> 
                             : 
@@ -665,6 +701,13 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').width / 2,
         width: Dimensions.get('window').width / 1.2,
         // borderRadius: 8,
+    },
+    imageStyles:
+    {
+        resizeMode: 'contain',
+        height: Dimensions.get('window').width / 3.2,
+        width: Dimensions.get('window').width / 3.2,
+        borderRadius: 8,
     },
 });
 export default Screen;

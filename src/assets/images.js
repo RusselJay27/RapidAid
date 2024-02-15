@@ -42,4 +42,9 @@ export default images = {
     strain: require('~/assets/images/strain.jpg'),
     sorethroat: require('~/assets/images/sorethroat.jpg'),
     headache: require('~/assets/images/headache.jpg'),
+    
+    injuries_trauma: require('~/assets/images/injuries_trauma.jpg'),
+    breathing_problem: require('~/assets/images/breathing_problem.png'),
+    environmental_accident: require('~/assets/images/environmental_accident.png'),
+    medical_condition: require('~/assets/images/medical_condition.png'),
 };
